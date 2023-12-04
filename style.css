@@ -1,0 +1,148 @@
+*{
+  max-width: 1366px; 
+  width:100%; 
+  margin: 0 auto;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  --main-color: white;
+  color:var (--main-color);
+  font-family: 'roboto', sans-serif;
+  background-color: black;
+}
+
+body{
+  background-color: black;
+}
+
+section{
+  display: grid;
+  place-items: center;
+  align-items: center;
+  background-color: black;
+  min-height: 100vh;
+}
+
+.release{
+  color: white;
+  text-align: center;
+}
+
+.rel{
+  display: inline-block;
+  text-align: center;
+  align-self: center;
+  font-size: larger;
+}
+
+#agendeButton{
+  display: inline-block;
+  text-align: center;
+  align-self: center;
+  font-size: x-large;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(20px);
+  transform: translateX(-100%);
+  transition: all 1.5s;
+}
+
+.hidden1 {
+  opacity: 0;
+  filter: blur(20px);
+  transform: translateX(100%);
+  transition: all 1.5s;
+}
+
+
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+  transition: 1.5s;
+}
+
+.buttonWhats{
+  width: 2.1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  animation-name: grow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+}
+@keyframes grow{
+  100%{transform: scale(2,2);}
+}
+
+.imageGeo{
+  width: 40%;
+  animation-name: fade;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fade{
+  100%{opacity: 0.7;}
+}
+
+h5.card-title{
+  color:white;
+  font-size: medium;
+}
+
+.card-text{
+  color:white;
+  font-size: medium;
+}
+.text-body-secondary{
+  color:white
+};  
+
+main .nav-item a:hover{
+  font-weight: 900;
+  text-shadow: 2px 2px 2px;
+  transition: all .5s;
+}
+
+.imagens:hover{
+  transform: scale(1.1);
+}
+
+.imagens_2{
+  display:flex;
+  flex-direction: row;
+  flex-basis: auto;
+  justify-content: space-between;
+  border: 2px white solid;
+  gap: 2rem;
+  color:var (--main-color);
+}
+
+.imagens_2:hover{
+  transform: scale(1.1);
+}
+
+.icon{
+  transition: all 1s;
+  transform: scale(1.5);
+}
+
+.icon:hover{
+  transition: all 1.5s;
+  transform:scale(2.1);
+}
+
+.textClash{
+color:var (--main-color); 
+ margin: auto; 
+ text-align: center;
+ line-height: 5rem; 
+ font-size: xx-large;
+}
+
+.Apoio{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
