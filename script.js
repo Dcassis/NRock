@@ -16,4 +16,9 @@ const elements1 = document.querySelectorAll('.hidden1')
 
 elements1.forEach((element) => myObserver.observe(element))
 
+const elements2 = document.querySelectorAll('.hidden2')
+
+elements2.forEach((element) => myObserver.observe(element))
+
+
 
