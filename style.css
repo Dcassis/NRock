@@ -1,0 +1,151 @@
+*{
+    border-box: box-sizzing;
+    padding: 0;
+    margin:0;
+}
+
+#navegacao{
+     background: rgb(208,201,201);
+    background: -moz-linear-gradient(140deg, rgba(208,201,201,1) 0%, rgba(136,136,136,1) 34%, rgba(0,0,0,1) 85%);
+    background: -webkit-linear-gradient(140deg, rgba(208,201,201,1) 0%, rgba(136,136,136,1) 34%, rgba(0,0,0,1) 85%);
+    background: linear-gradient(140deg, rgba(208,201,201,1) 0%, rgba(136,136,136,1) 34%, rgba(0,0,0,1) 85%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d0c9c9",endColorstr="#000000",GradientType=1);
+}
+
+.especialBorder{
+    border-radius: 18% 82% 20% 80% / 41% 8% 92% 59% 
+}
+.especialBorder2{
+    border-radius:6% 94% 20% 80% / 41% 0% 100% 59% 
+}
+
+.cardBlur{
+  background: rgba( 245, 239, 239, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 14.5px );
+-webkit-backdrop-filter: blur( 14.5px );
+border-radius: 0 0 10px 10px;
+border: 2px solid #A2E634
+}
+
+
+//FOOTER - RODAPÉ
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+footer{
+    padding: 50px 0;
+}
+
+
+
+.container-footer{
+    max-width: 1400px;
+    padding: 0 4%;
+    margin: auto;
+}
+.row-footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+.footer-col h4{
+    font-size: 22px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer-col ul{
+    list-style: none;
+}
+.footer-col ul li{
+    margin: 10px 0;
+}
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    padding-left: 10px;
+}
+.footer-col .medias-socias{
+    margin-top: 30px;
+}
+.footer-col .medias-socias a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+}
+.footer-col .medias-socias a i{
+    font-size: 20px;
+}
+
+.footer-col .form-sub input{
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    background-color: #00ff00;
+}
+.footer-col .form-sub input::placeholder{
+    color: white;
+    font-weight: bold;
+}
+.footer-col .form-sub button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px; 
+    font-size: 17px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #00ff00;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: white;        
+}
+
+
+
+/* Responsivo */
+@media (max-width: 800px) {
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width:600px) {
+    .footer-col{
+        width: 100%;
+    }
+    .navegacao{
+        font-size: 12px;
+        text-weight: 100;
+    }
+}
+
