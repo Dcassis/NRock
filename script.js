@@ -114,7 +114,94 @@ document.getElementById('ano').innerText = anoAtual;
       } else {
         document.getElementById("resultado").innerText = "Por favor, selecione uma resposta!";
       }
+ }
+    
+
+
+
+
+//////////// rock news ///////////
+
+// async function loadNews() {
+//             const apiKey = '751beb5f9ee84103b6810e1da10346a1'; // Substitua pela sua chave de API do Google
+//             const query = 'rock music'; // Sua consulta de pesquisa
+//             const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
+
+//             try {
+//                 const response = await fetch(url);
+//                 const data = await response.json();
+
+//                 if (data.articles && data.articles.length > 0) {
+//                     const newsContainer = document.getElementById('news');
+//                   newsContainer.innerHTML = ''; // Limpa o conteúdo anterior
+                  
+
+//                     data.articles.forEach(article => {
+//                         const articleElement = document.createElement('div');
+//                         articleElement.innerHTML = `
+//                             <h2>${article.title}</h2>
+//                             <p>${article.description}</p>
+//                             <a href="${article.url}" target="_blank">Leia mais</a>
+//                             <hr>
+//                         `;
+//                         newsContainer.appendChild(articleElement);
+//                     });
+//                 } else {
+//                     console.error('Nenhuma notícia encontrada.');
+//                 }
+//             } catch (error) {
+//                 console.error('Erro ao carregar notícias:', error);
+//             }
+//         }
+
+//         // Chamada à função de carregamento de notícias quando a página carrega
+// window.onload = loadNews;
+        
+
+// Função para traduzir o texto usando a API de Tradução do Google
+async function translateText(text, targetLanguage) {
+    const response = await fetch(`https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLanguage}&dt=t&q=${text}`);
+    const translatedData = await response.json();
+    return translatedData[0][0][0]; // Extrai o texto traduzido
+}
+
+async function loadNews() {
+    const apiKey = '751beb5f9ee84103b6810e1da10346a1'; // Sua chave de API do Google
+    const query = 'rock music'; // Sua consulta de pesquisa
+    const url = `https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.articles && data.articles.length > 0) {
+            const newsContainer = document.getElementById('news');
+            newsContainer.innerHTML = ''; // Limpa o conteúdo anterior
+
+            for (const article of data.articles) {
+                const translatedTitle = await translateText(article.title, 'pt');
+                const translatedDescription = await translateText(article.description, 'pt');
+
+                const articleElement = document.createElement('div');
+                articleElement.innerHTML = `
+                    <h2>${translatedTitle}</h2>
+                    <p>${translatedDescription}</p>
+                    <a href="${article.url}" target="_blank">Leia mais</a>
+                    <hr>
+                `;
+                newsContainer.appendChild(articleElement);
+            }
+        } else {
+            console.error('Nenhuma notícia encontrada.');
+        }
+    } catch (error) {
+        console.error('Erro ao carregar notícias:', error);
     }
+}
+
+// Chama a função para carregar as notícias quando a página carrega
+window.onload = loadNews;
+
 
 //////////// START ANIMATION ///////////
 AOS.init();
