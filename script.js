@@ -2,27 +2,27 @@
 
 //////////// CARTAZ POP-UP ///////////
 
-document.addEventListener("DOMContentLoaded", function () {
-  const popupContainer = document.getElementById("popup-container");
-  const closeButton = document.getElementById("close-btn");
-  const banner = document.getElementById("banner")  
+//document.addEventListener("DOMContentLoaded", function () {
+ //const popupContainer = document.getElementById("popup-container");
+  //const closeButton = document.getElementById("close-btn");
+  //const banner = document.getElementById("banner")  
 
     
 // Esconder Banner para mostrar o POP-UP
-    banner.classList.remove("block")
-    banner.classList.add("hidden")
+    //banner.classList.remove("block")
+    //banner.classList.add("hidden")
 
   // Exibir o pop-up ao carregar a página
-    popupContainer.style.display = "flex";
+    //popupContainer.style.display = "flex";
 
   // Associar a ação de fechar ao botão
-    closeButton.addEventListener("click", function() {
+    //closeButton.addEventListener("click", function() {
     // Ocultar o pop-up ao clicar no botão
-    popupContainer.style.display = "none";
-    banner.classList.remove("hidden")
-    banner.classList.add("block")
-  });
-});
+    //popupContainer.style.display = "none";
+    //banner.classList.remove("hidden")
+    //banner.classList.add("block")
+//  });
+//});
 
 
 //////////// MODAL MUSICOS ///////////
