@@ -5,17 +5,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-
 .especialBorder{
     border-radius: 18% 82% 20% 80% / 41% 8% 92% 59% 
 }
 .especialBorder2{
     border-radius:6% 94% 20% 80% / 41% 0% 100% 59% 
 }
-
-
-
 
 //FOOTER - RODAPÉ
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
@@ -26,7 +21,7 @@
     font-family: 'Poppins', sans-serif;
 }
 footer{
-    padding: 50px 0;
+    padding: 10px 0;
 }
 
 .container-footer{
@@ -46,7 +41,7 @@ footer{
 .footer-col h4{
     font-size: 22px;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-weight: 500;
     position: relative;
     text-transform: uppercase;
@@ -54,9 +49,7 @@ footer{
 .footer-col ul{
     list-style: none;
 }
-.footer-col ul li{
-    margin: 10px 0;
-}
+
 .footer-col ul li a{
     font-size: 16px;
     text-transform: capitalize;
@@ -70,15 +63,15 @@ footer{
     padding-left: 10px;
 }
 .footer-col .medias-socias{
-    margin-top: 30px;
+    margin-top: 12px;
 }
 .footer-col .medias-socias a{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 55px;
-    width: 55px;
-    margin: 0 10px 10px 0;
+    height: 50px;
+    width: 50px;
+    margin: 0 10px 0px 0;
     text-decoration: none;
     border-radius: 50%;
     color: black;
@@ -89,9 +82,9 @@ footer{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 55px;
-    width: 55px;
-    margin: 10px 10px 10px 0;
+    height: 50px;
+    width: 50px;
+    margin: 10px 10px 0 0;
     text-decoration: none;
     border-radius: 50%;
     color: white;
@@ -99,10 +92,10 @@ footer{
     transition: all 0.5s ease;
 }
 .footer-col .medias-socias a i{
-    font-size: 30px;
+    font-size: 25px;
 }
 .footer-col .medias-socias2 a i{
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .footer-col .form-sub input{
@@ -131,7 +124,6 @@ footer{
     font-weight: bold;
     background-color: white;        
 }
-
 
 
 /* Responsivo */
