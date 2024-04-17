@@ -2,27 +2,27 @@
 
 //////////// CARTAZ POP-UP ///////////
 
-//document.addEventListener("DOMContentLoaded", function () {
- //const popupContainer = document.getElementById("popup-container");
-  //const closeButton = document.getElementById("close-btn");
-  //const banner = document.getElementById("banner")  
+//  document.addEventListener("DOMContentLoaded", function () {
+//   const popupContainer = document.getElementById("popup-container");
+//  // const closeButton = document.getElementById("close-btn");
+//   const banner = document.getElementById("banner")  
 
     
-// Esconder Banner para mostrar o POP-UP
-    //banner.classList.remove("block")
-    //banner.classList.add("hidden")
+// // Esconder Banner para mostrar o POP-UP
+//     banner.classList.add("block")
+//     banner.classList.remove("hidden")
 
-  // Exibir o pop-up ao carregar a página
-    //popupContainer.style.display = "flex";
+//   // Exibir o pop-up ao carregar a página
+//     popupContainer.style.display = "flex";
 
-  // Associar a ação de fechar ao botão
-    //closeButton.addEventListener("click", function() {
-    // Ocultar o pop-up ao clicar no botão
-    //popupContainer.style.display = "none";
-    //banner.classList.remove("hidden")
-    //banner.classList.add("block")
-//  });
-//});
+//   // Associar a ação de fechar ao botão
+//     //closeButton.addEventListener("click", function() {
+//    //Ocultar o pop-up ao clicar no botão
+//     popupContainer.style.display = "none";
+//     banner.classList.remove("hidden")
+//     banner.classList.add("block")
+//   });
+// ;
 
 
 //////////// MODAL MUSICOS ///////////
@@ -79,17 +79,17 @@ botaoModal4.onclick = function () {
 
 //////////// HORAS PARA O SHOW ///////////
 
- // Seu código JavaScript aqui
-       const dataDoEvento = moment.tz('2024-04-19T17:00:00', 'America/Sao_Paulo');
-        const agora = moment();
-        const diferenca = moment.duration(dataDoEvento.diff(agora));
+//  // Seu código JavaScript aqui
+//        const dataDoEvento = moment.tz('2024-04-19T17:00:00', 'America/Sao_Paulo');
+//         const agora = moment();
+//         const diferenca = moment.duration(dataDoEvento.diff(agora));
 
-        const diasFaltando = diferenca.days();
-        const horasFaltando = diferenca.hours();
-        const minutosFaltando = diferenca.minutes();
+//         const diasFaltando = diferenca.days();
+//         const horasFaltando = diferenca.hours();
+//         const minutosFaltando = diferenca.minutes();
 
-document.getElementById('tempo-para-evento').innerText = ` Faltam: ${diasFaltando} dias, ${horasFaltando} horas e ${minutosFaltando} minutos  
-            Para nosso próximo Show!`;
+// document.getElementById('tempo-para-evento').innerText = ` Faltam: ${diasFaltando} dias, ${horasFaltando} horas e ${minutosFaltando} minutos  
+//             Para nosso próximo Show!`;
 
 
 /////EXIBIR ANO ATUAL NO COPYRIGHT////
