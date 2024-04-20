@@ -104,19 +104,20 @@
 
     <!--POP-UP-->
 
-     <!-- <section class="flex flex-col justify-center items-center mx-auto bg-black shadow-md shadow-#aaaa90c2" id="popup-container">
-        <div class="flex justify-center p-4 mx-auto text-sm">
+     <section class="fixed size-40 top-32 z-10 left-0 right-0 h-auto w-1/3 items-center mx-auto bg-black shadow-xl shadow-lime-400/75 mt-10 rounded-xl min-w-80" id="popup-container">
+        <!--ATIVAÇAO DA FUNÇAO RELÓGIO QUANDO FOR NECESSÁRIO-->
+        <!-- <div class="flex justify-center p-4 mx-auto text-sm">
             <h2  data-aos="fade-down-right" data-aos-duration="1000" class="text-3xl  text-center mx-auto  text-bold p-4  border-4 border-lime-400 z-10 my-2 rounded-xl"><i id="tempo-para-evento" class="bi bi-alarm text-white text-sm z-0 sm:text-base md:text-lg lg:text-xl xl:text-2xl"></i></h2>
-        </div> 
-         <div class="flex justify-center items-start mx-auto">
-            <button class="text-white text-4xl relative left-10 z-10" id="close-btn">&times;</button>
-            <img class="rounded-lg mx-auto w-60 md:w-72 lg:w-80 xl:w-96 mb-2 p-2" src="/assets/shows/bannerPopup.webp" alt="Cartaz do show no Shopping Riomar em 19/4/2024">
+        </div>  -->
+         <div class="mx-auto p-2 rounded-xl min-w-80">
+            <button class="text-white text-3xl relative left-4 top-10" id="close-btn">&times;</button>
+            <a href="/nrockStore.html"><img class=" mx-auto min-w-80" src="/assets/store/cardStore.webp" alt="Cartaz de divulgaçao da loja"></a>
         </div>
-    </section> -->
+    </section>
 
     <!--BANNER PRINCIPAL-->
 
-    <section id="banner" class="flex justify-center items-center  h-full bg-black mx-auto">  
+    <section id="banner" class="flex justify-center items-center h-full bg-black mx-auto">  
         <div class="flex justify-center flex-wrap p-10">
             <img class="mx-auto w-auto rounded-md shadow-xl shadow-lime-400/75" src="/assets/mainBanner.webp" alt="Banner da banda">
         </div>
@@ -256,22 +257,24 @@
                 <div class="footer-col">
                     <h4><a href="/nrockStore.html">'Nrock Store</a></i></h4>
                     <ul>
-                        <li><a class="hover:bg-lime-400 hover:text-black" href="#" target="_blank">Camisas</a></li>
-                        <li><a class="hover:bg-lime-400 hover:text-black" href="#" target="_blank">Garrafas</a></li>
-                        <li><a class="hover:bg-lime-400 hover:text-black" href="#" target="_blank">Bonés</a></li>
+                        <li><a class="hover:bg-lime-400 hover:text-black" href="/nrockStore.html" target="_blank">Camisas</a></li>
+                        <li><a class="hover:bg-lime-400 hover:text-black" href="/nrockStore.html" target="_blank">Garrafas</a></li>
+                        <li><a class="hover:bg-lime-400 hover:text-black" href="/nrockStore.html" target="_blank">Bonés</a></li>
                     </ul>
                 </div>
                 <!--end footer col-->
              
                 <!-- footer col-->
+                
                 <div class="footer-col">
                     <h4>Receba Novidades!</h4>
                     <div class="form-sub bg-lime-400">
-                        <form>
-                            <input type="email" placeholder="Digite o seu e-mail" required>
-                            <button>subscrever</button>
+                        <form id="subscribeForm">
+                            <input type="email" id="emailInput" placeholder="Digite o seu e-mail" required>
+                            <button type="button" id="subscribeButton">Inscreva-se aqui!</button>
                         </form>
                     </div>
+                </div>
 
                     <div class="medias-socias2 flex justify-between mt-8">
                     <a class="hover:bg-lime-400 hover:text-black" href="https://www.instagram.com/nrockoficial/" target="_blank" rel='noopener noreferrer'><i class="text-3xl bi bi-instagram  "></i></a>  

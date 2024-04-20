@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Nrock | Banda de Rock | Aracaju, SE">
     <meta name="description" content="'Nrock, confira agenda de shows, eventos e novidades!">
@@ -54,12 +54,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="style.css">
     <title>'Nrock Store</title>
 </head>
 <body class=" mmax-w-screen-xl min-w-80 drop-shadow-sm bg-black text-white box-border mx-auto">
@@ -69,8 +71,8 @@
         </div>
     </header>
     
-    <section class="flex flex-col flex-wrap justify-center w-full h-auto items-center mt-6 lg:mt-12">
-        <h1 class="flex justify-center items-center text-center text-white text-3xl md:text-4xl lg:text-5xl mx-auto my-5 p-2">Adquira aqui os produtos mais irados do Rock!
+    <section class="flex flex-col flex-wrap justify-center w-full h-auto items-center">
+        <h1 class="flex justify-center items-center text-center text-white text-3xl md:text-4xl lg:text-5xl mx-auto p-2">Adquira aqui os produtos mais irados do Rock!
         </h1>
     </section>
 
@@ -82,7 +84,7 @@
         </div>
     </section>
 
-    <main class="grid grid-cols-1 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mt-6 lg:mt-12">
+    <main id="menu" class="grid grid-cols-1 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mt-6 lg:mt-12">
         <!-- PRODUTO ITEM -->
         <div class="flex gap-4">
           <img 
@@ -91,14 +93,14 @@
           class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-lime-400/75"
           />
           <div class="flex-grow text-white">
-            <p class="font-bold text-lg md:text-xl lg:text-2xl text-lg md:text-xl lg:text-2xl">Garrafa Térmica "Rock & Roll Forever"</p>
+            <p class="font-bold text-lg md:text-xl lg:text-2xl text-lg md:text-xl lg:text-2xl">Garrafa Rock & Roll Forever</p>
             <p class="text-base md:text-lg lg:text-xl md:text-lg lg:text-xl">Alumínio - 1000ml <br>Perfeita para manter suas bebidas geladas por horas, ideal para festivais e aventuras.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
               <p class="font-bold text-lg md:text-xl lg:text-2xl text-lg">R$ 65.00</p>
               <button 
-              class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90"
-              data-name='Garrafa Térmica "Rock & Roll Forever"'
+              class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90" 
+              data-name="Garrafa Rock & Roll Forever"
               data-price="65.00"
               >
               <i class="fa fa-cart-plus text-lg text-lime-400"></i>
@@ -115,14 +117,14 @@
           />
           
           <div class="flex-grow text-white">
-            <p class="font-bold text-lg md:text-xl lg:text-2xl">Garrafa Térmica "Rocker Cool"</p>
-            <p class="text-base md:text-lg lg:text-xl">Alumínio - 500ml <br>Com a "Rocker Cool" acompanhe o ritmo do rock com suas bebidas sempre geladas.</p>
+            <p class="font-bold text-lg md:text-xl lg:text-2xl">Garrafa 'Nrocker Cool</p>
+            <p class="text-base md:text-lg lg:text-xl">Alumínio - 500ml <br>Essa é a "Rocker Cool", acompanhe o ritmo do rock com suas bebidas sempre geladas.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
               <p class="font-bold text-lg md:text-xl lg:text-2xl text-lg">R$ 35.00</p>
               <button 
               class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90"
-              data-name='Garrafa Térmica "Rocker Cool"'
+              data-name="Garrafa 'Nrocker Cool"
               data-price="35.00"
               >
               <i class="fa fa-cart-plus text-lg text-lime-400"></i>
@@ -139,14 +141,14 @@
           />
           
           <div class="flex-grow text-white">
-            <p class="font-bold text-lg md:text-xl lg:text-2xl">Camisa "Nrock Legends"</p>
+            <p class="font-bold text-lg md:text-xl lg:text-2xl">Camisa 'Nrock Legends</p>
             <p class="text-base md:text-lg lg:text-xl">Qualidade e estilo único e conforto para os momentos mais intensos dos shows.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
               <p class="font-bold text-lg">R$ 45.00</p>
               <button 
               class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90"
-              data-name='Camisa "Nrock Legends"'
+              data-name="Camisa 'Nrock Legends"
               data-price="45.00"
               >
               <i class="fa fa-cart-plus text-lg text-lime-400"></i>
@@ -163,14 +165,14 @@
           />
           
           <div class="flex-grow text-white">
-            <p class="font-bold text-lg md:text-xl lg:text-2xl">Boné "Nrock Rebel"</p>
+            <p class="font-bold text-lg md:text-xl lg:text-2xl">Boné 'Nrock Rebel</p>
             <p class="text-base md:text-lg lg:text-xl">Um toque de rebeldia ao seu visual, com design moderno e o logotipo da banda.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
               <p class="font-bold text-lg">R$ 35.00</p>
               <button 
               class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90"
-              data-name='oné "Nrock Rebel"'
+              data-name="Boné 'Nrock Rebel"
               data-price="35.00"
               >
               <i class="fa fa-cart-plus text-lg text-lime-400"></i>
@@ -187,7 +189,7 @@
 
     <!-- MODAL CART -->
     <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
-        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+        <div class="bg-white text-black p-5 rounded-md min-w-[90%] md:min-w-[600px]">
         <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
         <div id="cart-items" class="flex justify-between mb-2 flex-col max-h-[400px] overflow-auto"></div>
@@ -203,6 +205,24 @@
         />
         <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
 
+        <p class="font-bold mt-4">Nome Completo</p>
+        <input 
+            type="text"
+            placeholder="Digite seu nome completo..."
+            id="nameProduct"
+            class="w-full border-2 p-1 rounded my-1"
+        />
+        <p class="text-red-500 hidden" id="nameProduct-warn">Digite seu nome completo!</p>
+        
+        <p class="font-bold mt-4">Número de Contato</p>
+        <input 
+            type="tel"
+            placeholder="Digite o número do seu telefone..."
+            id="tel"
+            class="w-full border-2 p-1 rounded my-1"
+        />
+        <p class="text-red-500 hidden" id="tel-warn">Digite seu telefone!</p>
+
         <div class="flex items-center justify-between mt-5 w-full">
             <button id="close-modal-btn">Fechar</button>
             <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
@@ -212,10 +232,7 @@
 
     <!-- BUTTON CART FOOTER -->
   <section class="w-full bg-lime-400 py-3 fixed bottom-0 z-40 flex items-center justify-center">
-    <button 
-      class="flex items-center gap-2 text-white font-bold"
-      id="cart-btn"
-    >
+    <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
       (<span id="cart-count">0</span>)
       Veja meu carrinho
       <i class="fa fa-cart-plus text-lg text-white"></i>
@@ -231,9 +248,10 @@
             <a class="hover:bg-lime-400 hover:text-black" href="https://www.youtube.com/@nrockoficial/about"> <i class="fbi bi-youtube"></i> </a>
             <a class="hover:bg-lime-400 hover:text-black" href="mailto:nrockoficial@gmail.com"> <i class="fbi bi-envelope-at "></i> </a>
         </div>
-         <div class="footer-col fixed bottom-12 mb-10 rounded-full p-2 right-1 w-auto border-white border-2 hover:scale-x-105 duration-150 text-white bg-lime-400 text-lg" >
-    <a href="/index.html"><i class="bi bi-arrow-return-left p-1 bold"></i></a>
-    </div>     
+        
+        <!--BOTÃO DE RETORNO-->
+        <button class="smky-btn3 text-xl relative hover:text-gray-800 hover:text-xl hover:rounded-xl py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-lime-400 after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-white"><a href="/index.html">Sair</a></button>
+
     </div>
             <!--end footer col-->
     
@@ -243,5 +261,6 @@
     </div>
 </footer>
 
+<script src="store.js"></script>
 </body>
 </html>
