@@ -60,11 +60,18 @@
 <!--FIREBASE-->
 
 <script type="module">
+  import { getFirestore } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+  
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
+
+
+  const db = getFirestore(app); // Crie uma referência ao Firestore
+const newsletterRef = db.collection('Newsletter'); // Referência à coleção
+const docRef = newsletterRef.doc('EqwiRHoFUuFjTPqS7J26'); // Referência ao documento específico
 
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -111,7 +118,7 @@
         </div>  -->
          <div class="mx-auto p-2 rounded-xl min-w-80">
             <button class="text-white text-3xl relative left-4 top-10" id="close-btn">&times;</button>
-            <a href="/nrockStore.html"><img class=" mx-auto min-w-80" src="/assets/store/cardStore.webp" alt="Cartaz de divulgaçao da loja"></a>
+            <a href="/nrockStore.html"><img class=" mx-auto min-w-80" src="/assets/shows/nrock_stones.webp" alt="Cartaz de divulgaçao da loja"></a>
         </div>
     </section>
 
@@ -271,7 +278,7 @@
                     <div class="form-sub bg-lime-400">
                         <form id="subscribeForm">
                             <input type="email" id="emailInput" placeholder="Digite o seu e-mail" required>
-                            <button type="button" id="subscribeButton">Inscreva-se aqui!</button>
+                            <button type="submit" id="subscribeButton">Inscreva-se aqui!</button>
                         </form>
                     </div>
                 </div>
@@ -294,6 +301,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/firebase.js"></script>
     <script src="moment.js"></script>
     <script src="script.js"></script>
 </body>
