@@ -1,68 +1,74 @@
-const menu = document.getElementById("menu")
-const cartBtn = document.getElementById("cart-btn")
-const cartModal = document.getElementById("cart-modal")
-const cartItemsContainer = document.getElementById("cart-items")
-const cartTotal = document.getElementById("cart-total")
-const checkoutBtn = document.getElementById("checkout-btn")
-const closeModalBtn = document.getElementById("close-modal-btn")
-const cartCounter = document.getElementById("cart-count")
-const addressInput = document.getElementById("address")
-const addressWarn = document.getElementById("address-warn")
-const nameInput = document.getElementById("nameProduct")
-const nameWarn = document.getElementById("nameProduct-warn")
-const telInput = document.getElementById("tel")
-const telWarn = document.getElementById("tel-warn")
+const menu = document.getElementById("menu");
+const cartBtn = document.getElementById("cart-btn");
+const cartModal = document.getElementById("cart-modal");
+const cartItemsContainer = document.getElementById("cart-items");
+const cartTotal = document.getElementById("cart-total");
+const checkoutBtn = document.getElementById("checkout-btn");
+const closeModalBtn = document.getElementById("close-modal-btn");
+const cartCounter = document.getElementById("cart-count");
+const addressInput = document.getElementById("address");
+const addressWarn = document.getElementById("address-warn");
+const nameInput = document.getElementById("nameProduct");
+const nameWarn = document.getElementById("nameProduct-warn");
+const telInput = document.getElementById("tel");
+const telWarn = document.getElementById("tel-warn");
 
-let cart = [];
+// Inicializa o carrinho a partir do sessionStorage ou um array vazio
+let cart = JSON.parse(sessionStorage.getItem('cart')) || [];
+
+// Atualiza o modal do carrinho ao carregar a página
+updateCartModal();
 
 // Abrir o modal do carrinho
-cartBtn.addEventListener("click", function() { 
+cartBtn.addEventListener("click", function() {
   updateCartModal();
-  cartModal.style.display = "flex"
-})
+  cartModal.style.display = "flex";
+});
 
 // Fechar o modal quando clicar fora
-cartModal.addEventListener("click", function(event){
-  if(event.target === cartModal){
-    cartModal.style.display = "none"
+cartModal.addEventListener("click", function(event) {
+  if (event.target === cartModal) {
+    cartModal.style.display = "none";
   }
-})
+});
 
-closeModalBtn.addEventListener("click", function(){
-  cartModal.style.display = "none"
-})
+closeModalBtn.addEventListener("click", function() {
+  cartModal.style.display = "none";
+});
 
-menu.addEventListener("click", function(event){
-  // console.log(event.target)
-  let parentButton = event.target.closest(".add-to-cart-btn")
+menu.addEventListener("click", function(event) {
+  let parentButton = event.target.closest(".add-to-cart-btn");
 
-  if(parentButton){
-    const name = parentButton.getAttribute("data-name")
-    const price = parseFloat(parentButton.getAttribute("data-price"))
-    addToCart(name, price)
+  if (parentButton) {
+    const name = parentButton.getAttribute("data-name");
+    const price = parseFloat(parentButton.getAttribute("data-price"));
+    addToCart(name, price);
   }
-})
+});
 
 // Função para adicionar no carrinho
-function addToCart(name, price){
-  const existingItem = cart.find(item => item.name === name)
+function addToCart(name, price) {
+  const existingItem = cart.find(item => item.name === name);
 
-  if(existingItem){
-   //Se o item já existe, aumenta apenas a quantidade + 1 
-   existingItem.quantity += 1;
-
-  }else{
+  if (existingItem) {
+    // Se o item já existe, aumenta apenas a quantidade + 1 
+    existingItem.quantity += 1;
+  } else {
     cart.push({
       name,
       price,
       quantity: 1,
-    })
+    });
   }
-  updateCartModal()
+
+  // Atualiza o modal do carrinho
+  updateCartModal();
+
+  // Salva o carrinho atualizado no sessionStorage
+  sessionStorage.setItem('cart', JSON.stringify(cart));
 }
 
-//Atualiza o carrinho
-
+// Atualiza o carrinho
 function updateCartModal() {
   cartItemsContainer.innerHTML = "";
   let total = 0;
@@ -100,126 +106,89 @@ function updateCartModal() {
 }
 
 // Função para remover o item do carrinho
-    cartItemsContainer.addEventListener("click", function (event){
-    if(event.target.classList.contains("remove-from-cart-btn")){
-    const name = event.target.getAttribute("data-name")
-
+cartItemsContainer.addEventListener("click", function(event) {
+  if (event.target.classList.contains("remove-from-cart-btn")) {
+    const name = event.target.getAttribute("data-name");
     removeItemCart(name);
   }
-})
+});
 
-function removeItemCart(name){
+function removeItemCart(name) {
   const index = cart.findIndex(item => item.name === name);
 
-  if(index !== -1){
+  if (index !== -1) {
     const item = cart[index];
-    
-    if(item.quantity > 1){
+
+    if (item.quantity > 1) {
       item.quantity -= 1;
       updateCartModal();
-      return;
+    } else {
+      cart.splice(index, 1);
+      updateCartModal();
     }
 
-    cart.splice(index, 1);
-    updateCartModal();
+    // Salva o carrinho atualizado no sessionStorage
+    sessionStorage.setItem('cart', JSON.stringify(cart));
   }
 }
 
-addressInput.addEventListener("input", function(event){
+addressInput.addEventListener("input", function(event) {
   let inputValue = event.target.value;
 
-  if(inputValue !== ""){
-    addressInput.classList.remove("border-red-500")
-    addressWarn.classList.add("hidden")
+  if (inputValue !== "") {
+    addressInput.classList.remove("border-red-500");
+    addressWarn.classList.add("hidden");
   }
-})
+});
 
-nameInput.addEventListener("input", function(event){
+nameInput.addEventListener("input", function(event) {
   let nameInputValue = event.target.value;
 
-  if(nameInputValue !== ""){
-    nameInput.classList.remove("border-red-500")
-    nameWarn.classList.add("hidden")
+  if (nameInputValue !== "") {
+    nameInput.classList.remove("border-red-500");
+    nameWarn.classList.add("hidden");
   }
-})
+});
 
-telInput.addEventListener("input", function(event){
+telInput.addEventListener("input", function(event) {
   let telInputValue = event.target.value;
 
-  if(telInputValue !== ""){
-    telInput.classList.remove("border-red-500")
-    telWarn.classList.add("hidden")
+  if (telInputValue !== "") {
+    telInput.classList.remove("border-red-500");
+    telWarn.classList.add("hidden");
   }
-})
+});
 
 // Finalizar pedido
-checkoutBtn.addEventListener("click", function () {
-
-//   const isOpen = checkRestaurantOpen();
-//   if (!isOpen) {
-
-//     Toastify({
-//       text: "Ops o restaurante está fechado!",
-//       duration: 3000,
-//       close: true,
-//       gravity: "top", // `top` or `bottom`
-//       position: "right", // `left`, `center` or `right`
-//       stopOnFocus: true, // Prevents dismissing of toast on hover
-//       style: {
-//           background: "#ef4444",
-//       },
-//     }).showToast();
-
-//     return;
-//   }
-
+checkoutBtn.addEventListener("click", function() {
   if (cart.length === 0) return;
-    if (addressInput.value === "") {
-        addressWarn.classList.remove("hidden")
-        addressInput.classList.add("border-red-500")
-        return
-    } else if (nameInput.value === "") {
-        nameWarn.classList.remove("hidden")
-        nameInput.classList.add("border-red-500")
-    return } else if (telInput.value === "") {
-          telWarn.classList.remove("hidden")
-    telInput.classList.add("border-red-500")
+  if (addressInput.value === "") {
+    addressWarn.classList.remove("hidden");
+    addressInput.classList.add("border-red-500");
+    return;
+  } else if (nameInput.value === "") {
+    nameWarn.classList.remove("hidden");
+    nameInput.classList.add("border-red-500");
+    return;
+  } else if (telInput.value === "") {
+    telWarn.classList.remove("hidden");
+    telInput.classList.add("border-red-500");
     return;
   }
-    
-  //Enviar o pedido para api whats
+
+  // Enviar o pedido para a API do WhatsApp
   const cartItems = cart.map((item) => {
-    return (
-      `    [   ${item.name} | Quantidade: (${item.quantity}) | Preço: R$${item.price}   ]     `
-    )
-  }).join("")
+    return `    [   ${item.name} | Quantidade: (${item.quantity}) | Preço: R$${item.price}   ]     `;
+  }).join("");
   let valorTotalPedido = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
 
   const message = encodeURIComponent(`ATENÇÃO! PEDIDO NO SITE DA 'NROCK \nPedido:\n${cartItems} \nValor Total: R$${valorTotalPedido.toFixed(2)} \nEndereço: ${addressInput.value} \nNome: ${nameInput.value} \nTelefone ${telInput.value}`);
-  
   const phone = "+5579991918908";  
 
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank")
+  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
+  // Limpar o carrinho e atualizar o modal
   cart = [];
   updateCartModal();
-})
-
-// Verificar a hora e manipular o card horario
-// function checkRestaurantOpen(){
-//   const data = new Date();
-//   const hora = data.getHours();
-//   return hora >= 18 && hora < 22; 
-//   //true = restaurante está aberto 
-// }
-
-// const spanItem = document.getElementById("date-span")
-// const isOpen = checkRestaurantOpen();
-
-// if(isOpen){
-//   spanItem.classList.remove("bg-red-500");
-//   spanItem.classList.add("bg-green-600")
-// }else{
-//   spanItem.classList.remove("bg-green-600")
-//     spanItem.classList.add("bg-red-500")
-//   }
+  sessionStorage.removeItem('cart');
+});
