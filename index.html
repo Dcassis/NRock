@@ -52,6 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="icon" href="/assets/favicon_nrock.ico" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
@@ -111,7 +112,7 @@ const docRef = newsletterRef.doc('EqwiRHoFUuFjTPqS7J26'); // Referência ao docu
 
     <!--POP-UP-->
 
-     <section class="fixed size-40 top-32 z-10 left-0 right-0 h-auto w-1/3 items-center mx-auto bg-black shadow-xl shadow-lime-400/75 mt-10 rounded-xl min-w-80" id="popup-container">
+     <section class="fixed size-40 top-40 z-10 left-0 right-0 h-auto w-1/3 items-center mx-auto bg-black shadow-xl shadow-lime-400/75 mt-10 rounded-xl min-w-80" id="popup-container">
         <!--ATIVAÇAO DA FUNÇAO RELÓGIO QUANDO FOR NECESSÁRIO-->
         <!-- <div class="flex justify-center p-4 mx-auto text-sm">
             <h2  data-aos="fade-down-right" data-aos-duration="1000" class="text-3xl  text-center mx-auto  text-bold p-4  border-4 border-lime-400 z-10 my-2 rounded-xl"><i id="tempo-para-evento" class="bi bi-alarm text-white text-sm z-0 sm:text-base md:text-lg lg:text-xl xl:text-2xl"></i></h2>
@@ -237,9 +238,9 @@ const docRef = newsletterRef.doc('EqwiRHoFUuFjTPqS7J26'); // Referência ao docu
 
 <!--VIDEOS-->
 
-<section class="pb-2 mb-4 mx-auto">
-    <iframe class="flex mx-auto p-2 shadow-xl shadow-lime-400/75 rounded-xl"
-    width="680" height="400" src="https://www.youtube.com/embed/cdqctyhrZ6c?si=QWXGJY1V_QpTH_lB" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+<section class="pb-2 mb-4 mx-auto h-fit">
+    <iframe class="flex mx-auto shadow-xl shadow-lime-400/75 h-96 w-full"
+    src="https://www.youtube.com/embed/cdqctyhrZ6c?si=QWXGJY1V_QpTH_lB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     </iframe>
 </section>
 
