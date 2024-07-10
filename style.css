@@ -105,10 +105,10 @@ footer{
     outline: none;
     border: 1px solid white;
     color: white;
-    background-color: #00ff00;
+    background-color: #EFC328;
 }
 .footer-col .form-sub input::placeholder{
-    color: white;
+    color: #3b3b3b;
     font-weight: bold;
 }
 .footer-col .form-sub button{
@@ -119,10 +119,10 @@ footer{
     outline: none;
     border: none;
     cursor: pointer;
-    color: #00ff00;
+    color: #EFC328;
     border-radius: 3px;
     font-weight: bold;
-    background-color: white;        
+    background-color: black;        
 }
 
 

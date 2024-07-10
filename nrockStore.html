@@ -1,8 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="Nrock | Banda de Rock | Aracaju, SE">
@@ -30,20 +28,8 @@
         "https://www.facebook.com/nrockoficial",
         "https://www.instagram.com/nrockoficial"
         ]
-    }
-        <title>Site Banda 'nrock</title>
+    }</script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: '#da373d',
-          }
-        }
-      }
-    }
-    </script>
     <style type="text/tailwindcss">
     @layer utilities {
         .content-auto {
@@ -51,36 +37,42 @@
         }
     }
     </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            nyellow: '#EFC328',
+          }
+        }
+      }
+    }
+    </script>
+    <link rel="icon" href="/favicon_nrock.ico" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="style.css">
     <title>'Nrock Store</title>
 </head>
 <body class=" mmax-w-screen-xl min-w-80 drop-shadow-sm bg-black text-white box-border mx-auto">
     <header>
         <div class="containerStore sticky top-0 flex-col flex-wrap justify-center w-full h-auto items-center z-10 flex-wrap bg-white shadow-md shadow-#aaaa90c2">
-            <img class="flex justify-center items-center mx-auto py-5 w-72 md:w-80 lg:w-96" src="./assets/logo.png" alt="logo da banda nrock">
+            <img class="flex justify-center items-center mx-auto py-2 w-72 md:w-80 lg:w-96" src="./assets/logo.png" alt="logo da banda nrock">
         </div>
     </header>
     
-    <section class="flex flex-col flex-wrap justify-center w-full h-auto items-center">
-        <h1 class="flex justify-center items-center text-center text-white text-3xl md:text-4xl lg:text-5xl mx-auto p-2">Adquira aqui os produtos mais irados do Rock!
+    <section class="flex flex-wrap justify-center w-full h-auto">
+        <h1 class="flex justify-center text-center text-white text-2xl md:text-3xl lg:text-4xl mx-auto my-4 p-2">Adquira aqui os produtos mais irados do Rock!
         </h1>
     </section>
 
-    <section class="mt-6 lg:mt-12 p-2">
+    <section class="p-2">
         <div>
-            <hr>
-            <hr>
-            <h2  class="mt-6 w-full lg:mt-12 py-4 flex mx-auto justify-center border-2 border-white bg-lime-400 text-white bold text-xl md:text-3xl md:py-6 text-center">Conheça a nossa linha de produtos:</h2>
+            <h2  class="w-full py-4 flex mx-auto justify-center border-2 border-white bg-nyellow text-black bold text-xl md:text-3xl md:py-6 text-center">Conheça a nossa linha de produtos:</h2>
         </div>
     </section>
 
@@ -90,20 +82,20 @@
           <img 
           src="./assets/store/garrafa preta.webp"
           alt="Garrafa"
-          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-lime-400/75"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-nyellow/75"
           />
           <div class="flex-grow text-white">
             <p class="font-bold text-lg md:text-xl lg:text-2xl text-lg md:text-xl lg:text-2xl">Garrafa Rock & Roll Forever</p>
-            <p class="text-base md:text-lg lg:text-xl md:text-lg lg:text-xl">Alumínio - 1000ml <br>Perfeita para manter suas bebidas geladas por horas, ideal para festivais e aventuras.</p>
+            <p class="text-base">Alumínio - 1000ml <br>Perfeita para manter suas bebidas geladas por horas, ideal para festivais e aventuras.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg md:text-xl lg:text-2xl text-lg">R$ 65.00</p>
+              <p class="text-base">R$ 65.00</p>
               <button 
               class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90" 
               data-name="Garrafa Rock & Roll Forever"
               data-price="65.00"
               >
-              <i class="fa fa-cart-plus text-lg text-lime-400"></i>
+              <i class="fa fa-cart-plus text-lg text-nyellow"></i>
             </button>
           </div>
         </div>
@@ -113,21 +105,21 @@
           <img 
           src="./assets/store/garrafa branca.webp"
           alt="Garrafa"
-          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-lime-400/75"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-nyellow/75"
           />
           
           <div class="flex-grow text-white">
             <p class="font-bold text-lg md:text-xl lg:text-2xl">Garrafa 'Nrocker Cool</p>
-            <p class="text-base md:text-lg lg:text-xl">Alumínio - 500ml <br>Essa é a "Rocker Cool", acompanhe o ritmo do rock com suas bebidas sempre geladas.</p>
+            <p class="text-base">Alumínio - 500ml <br>Essa é a "Rocker Cool", acompanhe o ritmo do rock com suas bebidas sempre geladas.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg md:text-xl lg:text-2xl text-lg">R$ 35.00</p>
+              <p class="text-base">R$ 35.00</p>
               <button 
               class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90"
               data-name="Garrafa 'Nrocker Cool"
               data-price="35.00"
               >
-              <i class="fa fa-cart-plus text-lg text-lime-400"></i>
+              <i class="fa fa-cart-plus text-lg text-nyellow"></i>
             </button>
           </div>
         </div>
@@ -137,21 +129,21 @@
           <img 
           src="./assets/store/camisa.webp"
           alt="Garrafa"
-          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-lime-400/75"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-nyellow/75"
           />
           
           <div class="flex-grow text-white">
             <p class="font-bold text-lg md:text-xl lg:text-2xl">Camisa 'Nrock Legends</p>
-            <p class="text-base md:text-lg lg:text-xl">Qualidade e estilo único e conforto para os momentos mais intensos dos shows.</p>
+            <p class="text-base">Qualidade e estilo único e conforto para os momentos mais intensos dos shows.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
-              <p class="font-bold text-lg">R$ 45.00</p>
+              <p class="text-base">R$ 45.00</p>
               <button 
               class="bg-gray-900 px-5 rounded add-to-cart-btn hover:opacity-90"
               data-name="Camisa 'Nrock Legends"
               data-price="45.00"
               >
-              <i class="fa fa-cart-plus text-lg text-lime-400"></i>
+              <i class="fa fa-cart-plus text-lg text-nyellow"></i>
             </button>
           </div>
         </div>
@@ -161,12 +153,12 @@
           <img 
           src="./assets/store/bone.webp"
           alt="Garrafa"
-          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-lime-400/75"
+          class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 shadow-xl shadow-nyellow/75"
           />
           
           <div class="flex-grow text-white">
             <p class="font-bold text-lg md:text-xl lg:text-2xl">Boné 'Nrock Rebel</p>
-            <p class="text-base md:text-lg lg:text-xl">Um toque de rebeldia ao seu visual, com design moderno e o logotipo da banda.</p>
+            <p class="text-base">Um toque de rebeldia ao seu visual, com design moderno e o logotipo da banda.</p>
             
             <div class="flex items-center gap-2 justify-between mt-3">
               <p class="font-bold text-lg">R$ 35.00</p>
@@ -175,7 +167,7 @@
               data-name="Boné 'Nrock Rebel"
               data-price="35.00"
               >
-              <i class="fa fa-cart-plus text-lg text-lime-400"></i>
+              <i class="fa fa-cart-plus text-lg text-nyellow"></i>
             </button>
           </div>
         </div>
@@ -184,11 +176,11 @@
 
       <!-- FIM PRODUTO ITEM -->
     <section class="flex justify-center text-center text-white mx-auto p-2 mt-6 lg:mt-12">
-        <h2 class="text-lg md:text-2xl lg:text-3xl italic mx-auto p-2"><span class="text-5xl text-lime-400 italic">"</span>Mostre seu amor pelo rock em grande estilo com os produtos Nrock! <span span class="text-5xl text-lime-400 italic">"</span></h2>
+        <h2 class="text-lg md:text-2xl lg:text-3xl italic mx-auto p-2"><span class="text-5xl text-nyellow italic">"</span>Mostre seu amor pelo rock em grande estilo com os produtos Nrock! <span span class="text-5xl text-nyellow italic">"</span></h2>
     </section>
 
     <!-- MODAL CART -->
-    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden" id="cart-modal">
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center border-2 p-1 rounded  hidden" id="cart-modal">
         <div class="bg-white text-black p-5 rounded-md min-w-[90%] md:min-w-[600px]">
         <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
@@ -196,14 +188,33 @@
 
         <p class="font-bold">Total: <span id="cart-total">0.00</span></p>
 
-        <p class="font-bold mt-4">Endereço de entrega:</p>
+        <!-- <p class="font-bold mt-4">Endereço de entrega:</p>
         <input 
             type="text"
             placeholder="Digite seu endereço completo..."
             id="address"
             class="w-full border-2 p-1 rounded my-1"
-        />
+        /> -->
         <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+          
+        <section id="address" class="mt-4 border-t-4 border-nyellow">
+          <h3 class="font-bold mx-auto text-2xl text-center mt-2 ">Endereço</h3>
+          <form class="font-bold mt-4" id="cepForm">
+           <label for="cep">Cep:</label>
+           <input class="w-1/3 border-2 p-1 rounded my-1" type="text" id="cep" name="cep" placeholder="Digite o CEP" required>
+           <button type="submit">Consultar</button>
+     
+         <div id="extraFields" class="hidden w-auto">
+           <label for="numero">Nº:</label>
+           <input class="w-1/3 border-2 p-1 rounded my-1 ms-3" type="text" id="numero" name="numero" placeholder="Digite o número">
+           <div  class="w-full">
+             <label for="complemento">Complemento:</label>
+             <input class="w-3/4 border-2 p-1 rounded my-1" type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+           </div>
+         </div>
+       </form>
+       <div id="resultado" class="hidden w-full border-2 border-gray-400 p-1 rounded my-1"></div>
+      </section>
 
         <p class="font-bold mt-4">Nome Completo</p>
         <input 
@@ -225,14 +236,14 @@
 
         <div class="flex items-center justify-between mt-5 w-full">
             <button id="close-modal-btn">Fechar</button>
-            <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
+            <button id="checkout-btn" class="bg-nyellow text-black px-4 py-1 rounded">Finalizar pedido</button>
         </div>
         </div>
     </div>
 
     <!-- BUTTON CART FOOTER -->
-  <section class="w-full bg-lime-400 py-3 fixed bottom-0 z-40 flex items-center justify-center">
-    <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+  <section class="w-full bg-nyellow py-3 fixed bottom-0 z-40 flex items-center justify-center">
+    <button class="flex items-center gap-2 text-black font-bold" id="cart-btn">
       (<span id="cart-count">0</span>)
       Veja meu carrinho
       <i class="fa fa-cart-plus text-lg text-white"></i>
@@ -243,24 +254,26 @@
     <div class="footer-col flex justify-center mx-auto">
 
         <div class="medias-socias2 flex justify-between my-3 w-80 mx-auto">
-            <a class="hover:bg-lime-400 hover:text-black" href="https://www.instagram.com/nrockoficial/" target="_blank" rel='noopener noreferrer'><i class="text-3xl bi bi-instagram  "></i></a>  
-            <a class="hover:bg-lime-400 hover:text-black" href="https://wa.me/5579991918908"> <i class="bi bi-whatsapp"></i> </a>
-            <a class="hover:bg-lime-400 hover:text-black" href="https://www.youtube.com/@nrockoficial/about"> <i class="fbi bi-youtube"></i> </a>
-            <a class="hover:bg-lime-400 hover:text-black" href="mailto:nrockoficial@gmail.com"> <i class="fbi bi-envelope-at "></i> </a>
+            <a class="hover:bg-nyellow hover:text-black" href="https://www.instagram.com/nrockoficial/" target="_blank" rel='noopener noreferrer'><i class="text-3xl bi bi-instagram  "></i></a>  
+            <a class="hover:bg-nyellow hover:text-black" href="https://wa.me/5579991918908"> <i class="bi bi-whatsapp"></i> </a>
+            <a class="hover:bg-nyellow hover:text-black" href="https://www.youtube.com/@nrockoficial/about"> <i class="fbi bi-youtube"></i> </a>
+            <a class="hover:bg-nyellow hover:text-black" href="mailto:nrockoficial@gmail.com"> <i class="fbi bi-envelope-at "></i> </a>
         </div>
         
         <!--BOTÃO DE RETORNO-->
-        <button class="smky-btn3 text-xl relative hover:text-gray-800 hover:text-xl hover:rounded-xl py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-lime-400 after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-white"><a href="/index.html">Sair</a></button>
+        <button class="smky-btn3 text-xl relative hover:text-gray-800 hover:text-xl hover:rounded-xl py-2 px-6 after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-nyellow after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-white"><a href="/index.html">Sair</a></button>
 
     </div>
             <!--end footer col-->
     
     <div class="flex flex-col justify-center mx-auto w-80 text-xs text-white text-center mt-8">
         <p>&copy;<span id="ano"></span> Todos os direitos reservados para a 'Nrock</p>
-        <p>Website desenvolvido por <a class="hover:bg-lime-400 hover:text-black" href="https://www.instagram.com/dcassis/">@dcassis</a></p>
+        <p>Website desenvolvido por <a class="hover:bg-nyellow hover:text-black" href="https://www.instagram.com/dcassis/">@dcassis</a></p>
     </div>
 </footer>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init()</script>
+<script src="moment.js"></script>  
 <script src="store.js"></script>
 </body>
 </html>
