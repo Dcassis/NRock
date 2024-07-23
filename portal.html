@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Gestor - 'NRock</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script type="module">
+        // Importa as funções necessárias do Firebase Firestore
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
+        import { getFirestore, getDocs, collection } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyANki1uvWzZEI5SxTGLZ7868Usn7UpB3Sg",
+            authDomain: "nrock-2af2c.firebaseapp.com",
+            databaseURL: "https://nrock-2af2c-default-rtdb.firebaseio.com",
+            projectId: "nrock-2af2c",
+            storageBucket: "nrock-2af2c.appspot.com",
+            messagingSenderId: "281329744786",
+            appId: "1:281329744786:web:6cc1d354ef657ca692df4b",
+            measurementId: "G-41DQYLB0KE"
+        };
+
+        // Inicializa o Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Função para buscar e-mails do Firestore
+        async function fetchEmails() {
+            const querySnapshot = await getDocs(collection(db, "Newsletter"));
+            const emailList = document.getElementById('emailList');
+            emailList.innerHTML = ''; // Limpa a lista
+
+            // Array para armazenar e-mails
+            let emailArray = [];
+
+            querySnapshot.forEach((doc) => {
+                const email = doc.data().Email;
+                emailArray.push(email);
+                
+                const li = document.createElement('li');
+                li.textContent = email;
+                emailList.appendChild(li);
+            });
+
+            // Adiciona evento para o botão de download
+            document.getElementById('downloadBtn').addEventListener('click', () => {
+                downloadEmails(emailArray);
+            });
+        }
+
+        // Função para criar e baixar o arquivo .txt
+        function downloadEmails(emailArray) {
+            const blob = new Blob([emailArray.join('\n')], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'emails.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Chama a função para buscar os emails quando a página carrega
+        window.onload = fetchEmails;
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color:#EFC328 ;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: .2rem;
+            background-color: #f9f9f9;
+            color: black;
+            margin-bottom: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            display: block;
+            font-size: 1rem;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #title{
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            width: 20%;
+            height: auto;
+            align-items: center;
+        }
+        .bi-file-earmark-arrow-down-fill{
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./assets/logo.png" alt="logo marca">
+        <h1>Portal do Gestor</h1>
+        <h2>E-mails cadastrados:</h2>
+        <ul id="emailList"></ul>    
+        <button id="downloadBtn"><i class="bi bi-file-earmark-arrow-down-fill"></i>  Download Emails as .txt</button>
+    </div>
+</body>
+</html>
