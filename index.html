@@ -48,6 +48,7 @@
         extend: {
           colors: {
             nyellow: '#EFC328',
+            placeColor:'#3b3b3b'
           }
         }
       }
@@ -229,9 +230,9 @@
                 <div class="footer-col">
                     <h4>Receba Novidades!</h4>
                     <div class="form-sub bg-nyellow">
-                        <form class="bg-black text-nyellow text-start border-2 border-white" id="subscribeForm">
-                            <input class="text-black" type="email" id="emailInput" placeholder="Digite o seu e-mail" required>
-                            <button class="p-3" type="submit" id="submitButton">Inscreva-se aqui!</button>
+                        <form class="flex flex-col bg-black text-nyellow text-start" id="subscribeForm">
+                            <input class="text-placeColor rounded-lg" type="email" id="emailInput" placeholder="Digite o seu e-mail" required>
+                            <button class="mt-1 p-2 text-placeColor text-base text-start bg-nyellow rounded-lg cursor-pointer hover:text-lg" type="submit" id="submitButton">Inscreva-se aqui!</button>
                         </form>
                     </div>
                 </div>

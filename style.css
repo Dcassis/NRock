@@ -100,31 +100,16 @@ footer{
 
 .footer-col .form-sub input{
     width: 100%;
-    padding: 10px;
-    font-size: 15px;
+    padding: 0.5rem;
+    font-size: 1rem;
     outline: none;
-    border: 1px solid white;
-    color: white;
+    color:#3b3b3b;
     background-color: #EFC328;
 }
 .footer-col .form-sub input::placeholder{
     color: #3b3b3b;
     font-weight: bold;
 }
-.footer-col .form-sub button{
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px; 
-    font-size: 17px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    color: #EFC328;
-    border-radius: 3px;
-    font-weight: bold;
-    background-color: black;        
-}
-
 
 /* Responsivo */
 @media (max-width: 800px) {
